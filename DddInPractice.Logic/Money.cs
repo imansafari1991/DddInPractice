@@ -8,12 +8,20 @@ namespace DddInPractice.Logic
 {
     public sealed class Money:ValueObject<Money>
     {
-        public int OneCentCount { get; set; }
-        public int TenCentCount { get; set; }
-        public int QuarterCount { get; set; }
-        public int OneDollarCount { get; set; }
-        public int FiveDollarCount { get; set; }
-        public int TwentyDollarCount { get; set; }
+        public static readonly Money None = new Money(0, 0, 0, 0, 0, 0);
+        public static readonly Money Cent = new Money(1, 0, 0, 0, 0, 0);
+        public static readonly Money TenCent = new Money(0, 1, 0, 0, 0, 0);
+        public static readonly Money Quarter = new Money(0, 0, 1, 0, 0, 0);
+        public static readonly Money Dollar = new Money(0, 0, 0, 1, 0, 0);
+        public static readonly Money FiveDollar = new Money(0, 0, 0, 0, 1, 0);
+        public static readonly Money TwentyDollar = new Money(0, 0, 0, 0, 0, 1);
+
+        public int OneCentCount { get;  }
+        public int TenCentCount { get;  }
+        public int QuarterCount { get;  }
+        public int OneDollarCount { get; }
+        public int FiveDollarCount { get;  }
+        public int TwentyDollarCount { get;  }
 
         public Money(
 
